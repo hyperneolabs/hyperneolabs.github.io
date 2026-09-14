@@ -1,0 +1,1 @@
+https://hyperneo.dev/agent.md — HyperNeo Review operating manual for AI agents: setup, enrollment, triggers, review contract, per-repo configuration

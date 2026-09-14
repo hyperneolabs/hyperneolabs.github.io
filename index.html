@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HyperNeo Review</title>
+<meta name="description" content="AI code review on every pull request: per-finding inline comments, one-line verdicts, no ceremony.">
+<link rel="alternate" type="text/markdown" href="agent.md" title="Machine-readable manual">
+<style>
+/* Token theme mirrored from internal/webui/assets/app.css (single source:
+   the webui token block). No JS, no markdown runtime, no external CDNs. */
+:root{color-scheme:light;
+--hn-bg:#fafafa;--hn-ink:#1c1e21;--hn-muted:#65707b;
+--hn-accent:#2563eb;--hn-accent-ink:#fff;--hn-border:#e5e7eb;
+--hn-header-bg:#1c2431;--hn-header-ink:#fff;--hn-header-link:#cdd6e4;
+--hn-font-sans:"Inter",-apple-system,"Segoe UI",sans-serif;--hn-font-mono:ui-monospace,monospace;
+--hn-text-base:1rem;--hn-text-lg:1.25rem;--hn-text-xl:1.75rem}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;
+--hn-bg:#14161a;--hn-ink:#e6e8eb;--hn-muted:#9aa4af;
+--hn-accent:#60a5fa;--hn-accent-ink:#0b1220;--hn-border:#2a2e35;
+--hn-header-bg:#10141b;--hn-header-ink:#fff;--hn-header-link:#cdd6e4}}
+*{box-sizing:border-box}
+body{background:var(--hn-bg);color:var(--hn-ink);font-family:var(--hn-font-sans);
+font-size:var(--hn-text-base);line-height:1.5;margin:0}
+a{color:var(--hn-accent);text-decoration:underline}
+code{font-family:var(--hn-font-mono);font-size:0.875em}
+header,footer{background:var(--hn-header-bg)}
+header{padding:4rem 1rem 3.5rem;text-align:center}
+header h1{color:var(--hn-header-ink);font-size:var(--hn-text-xl);font-weight:700;margin:0}
+header p{color:var(--hn-header-link);margin:0.75rem 0 0}
+.cta{background:var(--hn-accent);border:0;border-radius:4px;color:var(--hn-accent-ink);
+display:inline-block;font:inherit;margin-top:1.75rem;padding:0.5rem 1.25rem;
+text-decoration:none}
+main{margin:0 auto;max-width:44rem;padding:2.5rem 1rem 3rem}
+h2{border-bottom:1px solid var(--hn-border);font-size:var(--hn-text-lg);font-weight:600;
+margin:2.5rem 0 0.75rem;padding-bottom:0.375rem}
+h3{font-size:var(--hn-text-base);font-weight:600;margin:1.75rem 0 0.5rem}
+p,ul{margin:0.75rem 0}
+ul{padding-left:1.35rem}
+li{margin:0.3rem 0}
+footer{padding:1.5rem 1rem;text-align:center}
+footer a{color:var(--hn-header-link);margin:0 0.6rem}
+</style>
+</head>
+<body>
+<header>
+<h1>HyperNeo Review</h1>
+<p>AI code review on every pull request: per-finding inline comments,
+one-line verdicts, no ceremony.</p>
+<a class="cta" href="INSTALL_URL">Install the GitHub App</a>
+</header>
+<main>
+<h2>If you are an AI agent maintaining a repository</h2>
+
+<h3>What this does</h3>
+<p>On every pull request to an enrolled repo: reviews the diff, posts each
+finding as an inline review comment at its diff position — severity
+(P0/P1/P2; P0 and P1 are blocking, P2 is a minor note) and confidence — and
+finishes with a one-line verdict: “Approved.” or “Requires changes.” The
+review body names the engine and model that reviewed, the commit reviewed,
+and the trigger. A status-table comment tracks each run: started/finished,
+head, engine, verdict. Reviews are advisory by default; humans merge.</p>
+
+<h3>Setup — human, once, ~15 minutes</h3>
+<ol>
+<li>Install the GitHub App: <a href="INSTALL_URL">INSTALL_URL</a>
+(Marketplace listing pending)</li>
+<li>Grant access to the repositories to review</li>
+<li>Sign in to the admin UI with GitHub OAuth (the installation account
+owner or a collaborator on any enrolled repository):
+<a href="https://agent.hyperneo.dev/login">agent.hyperneo.dev/login</a></li>
+</ol>
+
+<h3>Enroll a repository</h3>
+<p>Admin UI → Repos → Enroll → <code>owner/name</code> plus the
+installation id (the GitHub App installation; required with App auth). Or
+simply grant the App access to the repo in your GitHub settings —
+auto-enroll follows, no id needed. New repos start advisory, primary
+engine <code>claude</code>, triggers open/push/mention. Reviews fire on
+the next PR open/push.</p>
+
+<h3>Trigger a review</h3>
+<ul>
+<li>Automatic: PR opened, reopened, or marked ready for review; every new
+push. Draft PRs are skipped until ready. Newest head wins — an in-flight
+review folds into the new head.</li>
+<li>On demand: comment on the PR mentioning
+<code>@hyperneo-ai</code> (e.g. <code>@hyperneo-ai review</code>) —
+needs the mention trigger on (it is by default). Any extra text in the
+comment steers that review.</li>
+</ul>
+<p>All triggers honor the repo's trigger settings; open, push, and
+mention are on by default.</p>
+
+<h3>The review contract</h3>
+<ul>
+<li>Findings: inline comments at the exact diff line — severity,
+confidence, what and why</li>
+<li>Verdict: one line in the review body, with engine/model provenance;
+clean PRs get the verdict and provenance lines only</li>
+<li>Findings on lines outside the diff: bare
+<code>file:line — severity</code> pointers in the body</li>
+<li>👀 while running; removed when the run finishes</li>
+</ul>
+
+<h3>Configure per repo (admin UI)</h3>
+<p>Mode — advisory (default; comments only) or gate (approve / request
+changes) · primary engine + shadow engines (shadows run alongside, are
+recorded, and are not posted) · triggers (open / push / mention / manual) ·
+diff excludes · extra guidance (steers what the reviewer looks at)</p>
+
+<h3>Agent etiquette</h3>
+<ul>
+<li>Address findings by pushing fixes; the next push is re-reviewed
+automatically when the push trigger is on (it is by default)</li>
+<li>The verdict is advisory to the human who merges</li>
+<li>The bot does not converse — don’t reply to its comments</li>
+</ul>
+
+<h3>Machine access</h3>
+<p>This manual: <a href="agent.md">https://hyperneo.dev/agent.md</a>
+(text/markdown, stable URL)</p>
+</main>
+<footer>
+<a href="agent.md">Manual (agent.md)</a>
+<a href="llms.txt">llms.txt</a>
+<a href="https://agent.hyperneo.dev/login">Admin UI</a>
+<a href="https://github.com/lsm">GitHub</a>
+</footer>
+</body>
+</html>
