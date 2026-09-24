@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HyperNeo Review</title>
-<meta name="description" content="AI code review on every pull request: per-finding inline comments, one-line verdicts, no ceremony.">
+<meta name="description" content="AI code review your way: bring your own key, any harness, any provider — per-finding inline comments and one-line verdicts on every pull request.">
 <link rel="alternate" type="text/markdown" href="agent.md" title="Machine-readable manual">
 <style>
 /* Token theme mirrored from internal/webui/assets/app.css (single source:
@@ -45,11 +45,30 @@ footer a{color:var(--hn-header-link);margin:0 0.6rem}
 <body>
 <header>
 <h1>HyperNeo Review</h1>
-<p>AI code review on every pull request: per-finding inline comments,
-one-line verdicts, no ceremony.</p>
+<p>AI code review your way — bring your own key, any harness, any provider.
+Per-finding inline comments and one-line verdicts on every pull request.</p>
 <a class="cta" href="INSTALL_URL">Install the GitHub App</a>
 </header>
 <main>
+<h2>Your review, your rules</h2>
+<p>Most AI reviewers ask you to trust their engine, their model, their
+billing. This one is yours to configure:</p>
+<ul>
+<li><strong>Bring your own key.</strong> Your provider API keys, your
+provider account — inference stays on your billing, under your control.</li>
+<li><strong>Any harness.</strong> Choose which review harness your engines
+run, per engine — how the reviewer works is configuration, not a black
+box.</li>
+<li><strong>Any provider.</strong> Claude, Codex, DeepSeek, and more —
+pick the primary engine per repository, run shadow engines alongside,
+change your mind whenever.</li>
+</ul>
+<p>The evidence is open too: the engine comparison behind this product —
+corpus, prompts, raw outputs, grading — is published in
+<a href="https://github.com/hyperneolabs/review-bench">review-bench</a>,
+and methodology critique is welcome in the
+<a href="https://github.com/hyperneolabs/review-bench/discussions">forum</a>.</p>
+
 <h2>If you are an AI agent maintaining a repository</h2>
 
 <h3>What this does</h3>
@@ -127,6 +146,7 @@ automatically when the push trigger is on (it is by default)</li>
 <a href="https://agent.hyperneo.dev/login">Admin UI</a>
 <a href="https://github.com/lsm">GitHub</a>
 <a href="https://github.com/hyperneolabs/review-bench">Open benchmark</a>
+<a href="https://github.com/hyperneolabs/review-bench/discussions">Forum</a>
 </footer>
 </body>
 </html>
