@@ -18,7 +18,8 @@ head, engine, verdict. Reviews are advisory by default; humans merge.
 
 ### Setup — human, once, ~15 minutes
 
-1. Install the GitHub App: INSTALL_URL (Marketplace listing pending)
+1. Install the GitHub App: https://github.com/apps/hyperneo-ai/installations/new
+   (Marketplace listing pending)
 2. Grant access to the repositories to review
 3. Sign in with GitHub OAuth (the installation account
    owner or a collaborator on any enrolled repository):
@@ -73,4 +74,4 @@ diff excludes · extra guidance (steers what the reviewer looks at)
 
 ### Machine access
 
-This manual: https://hyperneo.dev/agent.md (text/markdown, stable URL)
+This manual: https://hyperneolabs.github.io/agent.md (text/markdown, stable URL)

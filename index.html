@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HyperNeo Review</title>
-<meta name="description" content="AI code review your way: bring your own key, any harness, any provider — per-finding inline comments and one-line verdicts on every pull request.">
+<meta name="description" content="AI code review your way: bring your own key, any harness, any provider — per-finding inline comments and one-line verdicts on every enrolled pull request.">
 <link rel="alternate" type="text/markdown" href="agent.md" title="Machine-readable manual">
 <style>
 /* Token theme mirrored from internal/webui/assets/app.css (single source:
@@ -46,8 +46,9 @@ footer a{color:var(--hn-header-link);margin:0 0.6rem}
 <header>
 <h1>HyperNeo Review</h1>
 <p>AI code review your way — bring your own key, any harness, any provider.
-Per-finding inline comments and one-line verdicts on every pull request.</p>
-<a class="cta" href="INSTALL_URL">Install the GitHub App</a>
+Per-finding inline comments and one-line verdicts on every pull request
+in the repos you enroll.</p>
+<a class="cta" href="https://github.com/apps/hyperneo-ai/installations/new">Install the GitHub App</a>
 </header>
 <main>
 <h2>Your review, your rules</h2>
@@ -55,21 +56,20 @@ Per-finding inline comments and one-line verdicts on every pull request.</p>
 billing. This one is yours to configure:</p>
 <ul>
 <li><strong>Bring your own key.</strong> Your provider API keys, your
-provider account — inference stays on your billing, under your control.</li>
-<li><strong>Any harness.</strong> Reviews run on the standard agent
-harnesses — Claude Code, Codex, and the rest of the engine catalog — not
-a private pipeline. Which one reviews each repo is your
-configuration.</li>
+provider account — when you bring them, inference runs on your key and
+your billing, under your control.</li>
+<li><strong>Any harness.</strong> The review runs on the agent harness
+you choose — Claude Code, Codex, and more. How the reviewer works is
+configuration, not a black box.</li>
 <li><strong>Any provider.</strong> Claude, Codex, DeepSeek, and more —
 pick the primary engine per repository, run shadow engines alongside,
 change your mind whenever.</li>
 </ul>
-<p>The evidence is open too: the benchmark behind this product — corpus and
-grading methodology published today, every arm's prompts and raw outputs
-published as runs land — lives in
-<a href="https://github.com/hyperneolabs/review-bench">review-bench</a>,
-and methodology critique is welcome in the
-<a href="https://github.com/hyperneolabs/review-bench/discussions">forum</a>.</p>
+<p>The trust question is answered in the open:
+<a href="https://github.com/hyperneolabs/review-bench">review-bench</a>
+publishes the benchmark methodology, schemas, and corpus — first batch
+landed, results follow as runs do — and methodology critique is welcome
+in the <a href="https://github.com/hyperneolabs/review-bench/discussions">forum</a>.</p>
 
 <h2>If you are an AI agent maintaining a repository</h2>
 
@@ -84,12 +84,15 @@ head, engine, verdict. Reviews are advisory by default; humans merge.</p>
 
 <h3>Setup — human, once, ~15 minutes</h3>
 <ol>
-<li>Install the GitHub App: <a href="INSTALL_URL">INSTALL_URL</a>
+<li>Install the GitHub App:
+<a href="https://github.com/apps/hyperneo-ai/installations/new">github.com/apps/hyperneo-ai</a>
 (Marketplace listing pending)</li>
 <li>Grant access to the repositories to review</li>
-<li>Sign in to the admin UI with GitHub OAuth (the installation account
+<li>Sign in with GitHub OAuth (the installation account
 owner or a collaborator on any enrolled repository):
-<a href="https://agent.hyperneo.dev/login">agent.hyperneo.dev/login</a></li>
+<a href="https://agent.hyperneo.dev/login">agent.hyperneo.dev/login</a> —
+operators land in the admin console; everyone else in the customer app
+(<code>/app</code>)</li>
 </ol>
 
 <h3>Enroll a repository</h3>
@@ -139,14 +142,14 @@ automatically when the push trigger is on (it is by default)</li>
 </ul>
 
 <h3>Machine access</h3>
-<p>This manual: <a href="agent.md">https://hyperneo.dev/agent.md</a>
+<p>This manual: <a href="agent.md">https://hyperneolabs.github.io/agent.md</a>
 (text/markdown, stable URL)</p>
 </main>
 <footer>
 <a href="agent.md">Manual (agent.md)</a>
 <a href="llms.txt">llms.txt</a>
 <a href="https://agent.hyperneo.dev/login">Admin UI</a>
-<a href="https://github.com/lsm">GitHub</a>
+<a href="https://github.com/hyperneolabs">GitHub</a>
 <a href="https://github.com/hyperneolabs/review-bench">Open benchmark</a>
 <a href="https://github.com/hyperneolabs/review-bench/discussions">Forum</a>
 </footer>
