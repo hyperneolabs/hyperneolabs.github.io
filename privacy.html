@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — HyperNeo Review</title>
+<meta name="description" content="What HyperNeo Review processes: repository content to review your pull requests, account data, and provider keys sealed at rest. No training on your code.">
+<style>
+/* Token theme mirrored from internal/webui/assets/app.css (single source:
+   the webui token block). No JS, no markdown runtime, no external CDNs. */
+:root{color-scheme:light;
+--hn-bg:#fafafa;--hn-ink:#1c1e21;--hn-muted:#65707b;
+--hn-accent:#2563eb;--hn-accent-ink:#fff;--hn-border:#e5e7eb;
+--hn-header-bg:#1c2431;--hn-header-ink:#fff;--hn-header-link:#cdd6e4;
+--hn-font-sans:"Inter",-apple-system,"Segoe UI",sans-serif;--hn-font-mono:ui-monospace,monospace;
+--hn-text-base:1rem;--hn-text-lg:1.25rem;--hn-text-xl:1.75rem}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;
+--hn-bg:#14161a;--hn-ink:#e6e8eb;--hn-muted:#9aa4af;
+--hn-accent:#60a5fa;--hn-accent-ink:#0b1220;--hn-border:#2a2e35;
+--hn-header-bg:#10141b;--hn-header-ink:#fff;--hn-header-link:#cdd6e4}}
+*{box-sizing:border-box}
+body{background:var(--hn-bg);color:var(--hn-ink);font-family:var(--hn-font-sans);
+font-size:var(--hn-text-base);line-height:1.5;margin:0}
+a{color:var(--hn-accent);text-decoration:underline}
+code{font-family:var(--hn-font-mono);font-size:0.875em}
+header,footer{background:var(--hn-header-bg)}
+header{padding:3rem 1rem 2.5rem;text-align:center}
+header h1{color:var(--hn-header-ink);font-size:var(--hn-text-xl);font-weight:700;margin:0}
+header p{color:var(--hn-header-link);margin:0.75rem 0 0}
+main{margin:0 auto;max-width:44rem;padding:2.5rem 1rem 3rem}
+h2{border-bottom:1px solid var(--hn-border);font-size:var(--hn-text-lg);font-weight:600;
+margin:2.5rem 0 0.75rem;padding-bottom:0.375rem}
+p,ul{margin:0.75rem 0}
+ul{padding-left:1.35rem}
+li{margin:0.3rem 0}
+footer{padding:1.5rem 1rem;text-align:center}
+footer a{color:var(--hn-header-link);margin:0 0.6rem}
+</style>
+</head>
+<body>
+<header>
+<h1>Privacy</h1>
+<p>What HyperNeo Review processes, in plain language: your repository
+content to review your pull requests, your account data — and nothing
+sold, nothing trained.</p>
+</header>
+<main>
+<p><em>Last updated 2026-09-26. Invite-beta notice; the current version
+always lives at this URL.</em></p>
+
+<h2>The short version</h2>
+<ul>
+<li>We process your repository content to review your pull requests.
+That is the product; there is no other use of it.</li>
+<li>We do not train models on your code.</li>
+<li>Provider API keys you add are sealed — stored encrypted at rest, and
+never displayed again after you save them.</li>
+<li>We do not sell your data and there is no advertising.</li>
+</ul>
+
+<h2>What we process</h2>
+<ul>
+<li><strong>Repository content.</strong> The pull request diffs and the
+repository context needed to review them, for repositories you enroll.
+Used to produce reviews and their records — findings, verdicts, run
+history.</li>
+<li><strong>Account data.</strong> Your GitHub login and the repository
+and organization access GitHub reports to the review bot for enrolled
+repositories.</li>
+<li><strong>Provider keys.</strong> API keys you add for review
+inference: stored sealed (encrypted at rest with a server-side key),
+shown afterwards only as a label and fingerprint, and used only to run
+your reviews.</li>
+</ul>
+
+<h2>Where inference happens</h2>
+<p>Reviews run on the AI provider configured for the repository — on
+your own key when you have added one (bring your own key). Review
+requests, and the code context they need, go to that provider under its
+terms as well as ours.</p>
+
+<h2>No training on your code</h2>
+<p>We do not use your repository content, findings, or review records to
+train models — ours or anyone else's.</p>
+
+<h2>Retention and deletion</h2>
+<p>Review records are retained while your repositories are enrolled, so
+history stays navigable; account data is retained while your login is
+active. Email
+<a href="mailto:hello@hyperneo.dev">hello@hyperneo.dev</a> to request
+deletion of specific records or everything. Uninstalling the GitHub App
+stops new processing.</p>
+
+<h2>Sharing</h2>
+<p>Data is shared only as needed to run the service: our hosting
+infrastructure and the AI provider that runs each review (see above). We
+do not sell or rent data, and there is no advertising. We may disclose
+data when required by law.</p>
+
+<h2>Contact</h2>
+<p>Privacy questions and requests:
+<a href="mailto:hello@hyperneo.dev">hello@hyperneo.dev</a>. See also the
+<a href="/terms">Terms of Service</a>.</p>
+</main>
+<footer>
+<a href="/">Home</a>
+<a href="/terms">Terms</a>
+<a href="/privacy">Privacy</a>
+<a href="mailto:hello@hyperneo.dev">hello@hyperneo.dev</a>
+</footer>
+</body>
+</html>
