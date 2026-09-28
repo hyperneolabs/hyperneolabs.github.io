@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — HyperNeo Review</title>
+<meta name="description" content="Invite-beta terms for HyperNeo Review: what the service does, what you agree to, plans and payment, and how to reach us.">
+<style>
+/* Token theme mirrored from internal/webui/assets/app.css (single source:
+   the webui token block). No JS, no markdown runtime, no external CDNs. */
+:root{color-scheme:light;
+--hn-bg:#fafafa;--hn-ink:#1c1e21;--hn-muted:#65707b;
+--hn-accent:#2563eb;--hn-accent-ink:#fff;--hn-border:#e5e7eb;
+--hn-header-bg:#1c2431;--hn-header-ink:#fff;--hn-header-link:#cdd6e4;
+--hn-font-sans:"Inter",-apple-system,"Segoe UI",sans-serif;--hn-font-mono:ui-monospace,monospace;
+--hn-text-base:1rem;--hn-text-lg:1.25rem;--hn-text-xl:1.75rem}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;
+--hn-bg:#14161a;--hn-ink:#e6e8eb;--hn-muted:#9aa4af;
+--hn-accent:#60a5fa;--hn-accent-ink:#0b1220;--hn-border:#2a2e35;
+--hn-header-bg:#10141b;--hn-header-ink:#fff;--hn-header-link:#cdd6e4}}
+*{box-sizing:border-box}
+body{background:var(--hn-bg);color:var(--hn-ink);font-family:var(--hn-font-sans);
+font-size:var(--hn-text-base);line-height:1.5;margin:0}
+a{color:var(--hn-accent);text-decoration:underline}
+code{font-family:var(--hn-font-mono);font-size:0.875em}
+header,footer{background:var(--hn-header-bg)}
+header{padding:3rem 1rem 2.5rem;text-align:center}
+header h1{color:var(--hn-header-ink);font-size:var(--hn-text-xl);font-weight:700;margin:0}
+header p{color:var(--hn-header-link);margin:0.75rem 0 0}
+main{margin:0 auto;max-width:44rem;padding:2.5rem 1rem 3rem}
+h2{border-bottom:1px solid var(--hn-border);font-size:var(--hn-text-lg);font-weight:600;
+margin:2.5rem 0 0.75rem;padding-bottom:0.375rem}
+p,ul{margin:0.75rem 0}
+ul{padding-left:1.35rem}
+li{margin:0.3rem 0}
+footer{padding:1.5rem 1rem;text-align:center}
+footer a{color:var(--hn-header-link);margin:0 0.6rem}
+</style>
+</head>
+<body>
+<header>
+<h1>Terms of Service</h1>
+<p>HyperNeo Review — invite beta. The short version: the service reviews
+your pull requests, you stay responsible for your code, and we never
+meter usage.</p>
+</header>
+<main>
+<p><em>Last updated 2026-09-26. These are invite-beta terms, short on
+purpose. When the service leaves beta they are replaced with full terms,
+posted at this URL.</em></p>
+
+<h2>The service</h2>
+<p>HyperNeo Review is an AI code-review service. For the GitHub
+repositories you enroll, it reviews pull requests and posts findings as
+inline review comments (severity and confidence) plus a one-line
+verdict. You bring your own provider API keys (BYOK); inference for your
+reviews runs against the provider account you configure, on your key.</p>
+<p>Reviews are advisory by default: they inform, they do not decide. The
+humans who merge remain responsible for every line of code and every
+merge decision.</p>
+
+<h2>What we ask of you</h2>
+<ul>
+<li>Enroll only repositories you have the right to enroll, and whose
+content you may share with the service for review.</li>
+<li>Keys you add must be yours to use; your use of the underlying
+providers is subject to their terms as well as these.</li>
+<li>Don't use the service to abuse GitHub, your providers, or us.</li>
+</ul>
+
+<h2>Plans and payment</h2>
+<ul>
+<li><strong>Free</strong> — public repositories, and a 14-day no-card
+trial on private repositories.</li>
+<li><strong>Pro</strong> — $15 per developer per month, or $12 per
+developer per month billed annually.</li>
+<li><strong>Design Partner</strong> — $7.50 per developer per month,
+lifetime, locked at enrollment for early users.</li>
+</ul>
+<p>There is no usage metering. Because inference runs on your keys, we
+bill per developer — not per review, not per token. During the soft open
+no card is required: design partners are invoiced manually and billing
+terms are agreed by email; card payments arrive with checkout.</p>
+<p>You can stop any time — uninstall the GitHub App and delete your
+keys. Service ends with the current billing period; nothing renews
+silently.</p>
+
+<h2>Data</h2>
+<p>What we process and why is described in the
+<a href="/privacy">Privacy notice</a>, which is part of these terms.</p>
+
+<h2>Beta reality</h2>
+<p>The service is an invite beta, provided “as is” and “as available.”
+We work on it daily: features, engines, and harnesses may change while
+we harden it. To the extent permitted by law, we disclaim implied
+warranties, and our total liability for claims arising from the service
+is limited to the amount you paid us in the twelve months before the
+claim.</p>
+
+<h2>Changes and contact</h2>
+<p>We may update these terms; the current version always lives at this
+URL with its date above, and continued use after a change means you
+accept it. Questions, disputes, and cancellation emails:
+<a href="mailto:hello@hyperneo.dev">hello@hyperneo.dev</a>.</p>
+</main>
+<footer>
+<a href="/">Home</a>
+<a href="/terms">Terms</a>
+<a href="/privacy">Privacy</a>
+<a href="mailto:hello@hyperneo.dev">hello@hyperneo.dev</a>
+</footer>
+</body>
+</html>
