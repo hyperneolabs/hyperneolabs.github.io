@@ -74,4 +74,4 @@ diff excludes · extra guidance (steers what the reviewer looks at)
 
 ### Machine access
 
-This manual: https://hyperneolabs.github.io/agent.md (text/markdown, stable URL)
+This manual: https://hyperneo.dev/agent.md (text/markdown, stable URL)
